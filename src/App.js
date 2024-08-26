@@ -1,17 +1,22 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import Navbar from './Components/Navbar'
+import Home from './Pages/Home'
+import Update from './Pages/Update'
+import Delete from './Pages/Delete'
+import { Routes , Route } from 'react-router-dom'
+
 function App() {
   return (
-    <BrowserRouter>
+   <>
+   <Navbar/>
+   <div className='container'>
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="blogs" element={<Blogs />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="*" element={<NoPage />} />
-      </Route>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/update' element={<Update/>}/>
+      <Route path='/delete' element={<Delete/>}/>
     </Routes>
-  </BrowserRouter>
+   </div>
+  </>
   );
 }
 
